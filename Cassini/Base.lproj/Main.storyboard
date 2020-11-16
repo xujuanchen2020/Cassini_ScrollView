@@ -15,34 +15,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URK-zz-oH3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="896" translatesAutoresizingMaskIntoConstraints="NO" id="RRc-Rx-wBG">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="RRc-Rx-wBG" firstAttribute="trailing" secondItem="URK-zz-oH3" secondAttribute="trailing" id="8eH-2o-brO"/>
-                                    <constraint firstItem="RRc-Rx-wBG" firstAttribute="leading" secondItem="URK-zz-oH3" secondAttribute="leading" id="8ie-2C-vRa"/>
-                                    <constraint firstAttribute="bottom" secondItem="RRc-Rx-wBG" secondAttribute="bottom" id="f4s-gs-LVg"/>
-                                    <constraint firstItem="RRc-Rx-wBG" firstAttribute="top" secondItem="URK-zz-oH3" secondAttribute="top" id="vvC-dL-wuK"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="BuR-eM-qk5"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="WI9-SQ-fUH"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0U-3Q-aQX">
+                                <rect key="frame" x="0.0" y="-5" width="414" height="905"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="phd-c2-450"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="csk-Iz-xLW"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="URK-zz-oH3" firstAttribute="leading" secondItem="EyU-Wf-ENP" secondAttribute="leading" id="2fx-EF-c6t"/>
-                            <constraint firstItem="URK-zz-oH3" firstAttribute="top" secondItem="EyU-Wf-ENP" secondAttribute="top" id="B8F-UW-xfw"/>
-                            <constraint firstAttribute="bottom" secondItem="URK-zz-oH3" secondAttribute="bottom" id="ewe-B8-seg"/>
-                            <constraint firstAttribute="trailing" secondItem="URK-zz-oH3" secondAttribute="trailing" id="iAd-gP-xhh"/>
+                            <constraint firstAttribute="bottom" secondItem="p0U-3Q-aQX" secondAttribute="bottom" id="5Lb-E6-1DM"/>
+                            <constraint firstItem="p0U-3Q-aQX" firstAttribute="top" secondItem="EyU-Wf-ENP" secondAttribute="top" id="IrI-5Q-rJc"/>
+                            <constraint firstItem="p0U-3Q-aQX" firstAttribute="leading" secondItem="EyU-Wf-ENP" secondAttribute="leading" id="Sdr-I3-A6T"/>
+                            <constraint firstItem="p0U-3Q-aQX" firstAttribute="trailing" secondItem="EyU-Wf-ENP" secondAttribute="trailing" id="VfJ-5C-Gjp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lPp-f3-3mi"/>
                     </view>
                     <connections>
-                        <outlet property="ImageView" destination="RRc-Rx-wBG" id="LzO-2h-daX"/>
+                        <outlet property="scrollView" destination="p0U-3Q-aQX" id="C3v-Fp-fkW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ePj-fk-tg0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

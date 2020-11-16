@@ -8,14 +8,25 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
+class ImageViewController: UIViewController, UIScrollViewDelegate {
     
     var imageURL: URL?{
         didSet {
-            ImageView.image = nil
+            image = nil
             if view.window != nil {
                 fetchImage()
             }
+        }
+    }
+    
+    private var image: UIImage? {
+        get {
+            return ImageView.image
+        }
+        set {
+            ImageView.image = newValue
+            ImageView.sizeToFit()
+            scrollView?.contentSize = ImageView.frame.size
         }
     }
     
@@ -26,13 +37,26 @@ class ImageViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var ImageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!{
+        didSet {
+            scrollView.minimumZoomScale = 1/25
+            scrollView.maximumZoomScale = 1.0
+            scrollView.delegate = self
+            scrollView.addSubview(ImageView)
+        }
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return ImageView
+    }
+    var ImageView = UIImageView()
     
     private func fetchImage() {
         if let url = imageURL {
             let urlContents = try?Data(contentsOf: url)
             if let imageData = urlContents {
-                ImageView.image = UIImage(data: imageData)
+                image = UIImage(data: imageData)
+
             }
         }
     }
